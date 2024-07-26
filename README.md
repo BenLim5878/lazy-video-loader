@@ -82,7 +82,7 @@ This example sets a custom poster image for the video. The poster image will als
 ```
 
 ## License
-This project is licensed under the MIT License.
+This project is licensed under the Apache 2.0 license
 
 ## Author
 Ben Lim
