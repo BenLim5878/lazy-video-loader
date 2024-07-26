@@ -142,11 +142,6 @@ class LazyVideoLoader extends HTMLElement {
         })
 
         this.video.addEventListener("seeked", this.captureFirstFrame.bind(this));
-        
-        this.video.addEventListener("error", () => {
-            // this.shadowRoot.append(this.errorText)
-            // this.video.remove()
-        })
     }
 
     disconnectedCallback() {
@@ -172,12 +167,13 @@ class LazyVideoLoader extends HTMLElement {
         const sources = Array.from(this.querySelectorAll('source'));
         sources.forEach(source => {
             this.totalSources++
-            source.setAttribute('src', `${source.getAttribute('src')}?cache-bust=${new Date().getTime()}`);
+            source.setAttribute('src', `${source.getAttribute('src')}`);
             const clonedSource = source.cloneNode(true)
             clonedSource.addEventListener("error", ()=>{
                 this.failedSources++
-                if (this.failedSources === this.totalSources) {
-                    this.video.dispatchEvent(new Event('error'));
+                if (this.failedSources >= this.totalSources) {
+                    this.shadowRoot.append(this.errorText)
+                    this.video.remove()
                 }
             })
             this.video.appendChild(clonedSource);
