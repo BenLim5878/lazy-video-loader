@@ -1,0 +1,12 @@
+{
+    "name": "lazy-video-loader",
+    "version": "1.0.0",
+    "description": "A custom video element tag that enables loading of videos only when viewport renders near the element.",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": ["video", "lazy load", "custom element", "HTML component", "deferred loading", "viewport", "seo"],
+    "author": "Ben Lim",
+    "license": "MIT"
+  }
