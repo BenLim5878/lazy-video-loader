@@ -1,6 +1,6 @@
 {
     "name": "lazy-video-loader",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "description": "A custom video element tag that enables loading of videos only when viewport renders near the element.",
     "main": "lazy-video-loader.js",
     "scripts": {

@@ -4,7 +4,7 @@ LazyVideoLoader is a custom video element that enables loading of videos only wh
 
 ## Description
 
-The LazyVideoLoader custom HTML component is a lightweight solution for lazy loading videos in your web applications. It leverages the Intersection Observer API to detect when the video element enters the viewport and then starts loading the video. The component supports a variety of attributes to customize its behavior.
+The LazyVideoLoader custom HTML component is a lightweight solution (~1.8 KB) for lazy loading videos in your web applications. It leverages the Intersection Observer API to detect when the video element enters the viewport and then starts loading the video. The component supports a variety of attributes to customize its behavior.
 
 ## Benefits
 Websites with heavy video content often struggle with slow load times and high data usage, leading to poor user experiences and frustration.
@@ -25,7 +25,7 @@ npm install lazy-video-loader
 Or include it directly in your HTML via unpkg:
 
 ```html
-<script src="https://unpkg.com/lazy-video-loader/index.js"></script>
+<script src="https://unpkg.com/lazy-video-loader/lazy-video-loader-minified.js"></script>
 ```
 
 ## Attributes
