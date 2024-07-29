@@ -18,11 +18,6 @@ class LazyVideoLoader extends HTMLElement {
         // Create a constructed stylesheet
         const sheet = new CSSStyleSheet();
         sheet.replaceSync(`
-            @keyframes spin {
-                0% { transform: rotate(0deg); }
-                100% { transform: rotate(360deg); }
-            }
-
             :host {
                 display: flex;
                 position: relative;
@@ -35,7 +30,8 @@ class LazyVideoLoader extends HTMLElement {
 
             video {
                 width: 100%;
-                heigth: 100%;
+                height: 100%;
+                object-fit: cover;
             }
           `);
 
@@ -56,6 +52,15 @@ class LazyVideoLoader extends HTMLElement {
         let attrPlaysinline = this.getAttribute('playsinline')
         let attrMargin = this.getAttribute('margin') || 0
         let attrManual = this.getAttribute('manual')
+        let attrDisableRemotePlayback = this.getAttribute('disableRemotePlayback')
+
+        if (attrDisableRemotePlayback === null) {
+            this.video.disableRemotePlayback = false
+        } else if (attrDisableRemotePlayback === "" || attrDisableRemotePlayback === "true") {
+            this.video.disableRemotePlayback = true
+        } else if (attrDisableRemotePlayback === "false") {
+            this.video.disableRemotePlayback = false
+        }   
 
         if (attrManual === null) {
             attrManual = false
